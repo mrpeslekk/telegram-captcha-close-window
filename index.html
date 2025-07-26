@@ -26,21 +26,15 @@
     </div>
 
     <script>
-        // Set a timeout to close the window after 5000 milliseconds (5 seconds)
-        setTimeout(function () {
-            window.close();
-        }, 5000);
+        // Close the window after 5000 milliseconds (5 seconds)
+        setTimeout(() => window.close(), 5000);
 
-        // This part is an optional visual countdown timer
+        // This script provides the visual countdown
         let seconds = 5;
         const countdownElement = document.getElementById('countdown');
-        setInterval(function() {
+        setInterval(() => {
             seconds--;
-            if (seconds > 0) {
-                countdownElement.textContent = seconds;
-            } else {
-                 countdownElement.textContent = 0;
-            }
+            countdownElement.textContent = Math.max(0, seconds);
         }, 1000);
     </script>
 
