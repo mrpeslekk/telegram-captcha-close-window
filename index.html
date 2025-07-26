@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closing Window...</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>This window will close automatically.</h1>
+        <p>Closing in <span id="countdown">5</span> seconds...</p>
+    </div>
+
+    <script>
+        // Set a timeout to close the window after 5000 milliseconds (5 seconds)
+        setTimeout(function () {
+            window.close();
+        }, 5000);
+
+        // This part is an optional visual countdown timer
+        let seconds = 5;
+        const countdownElement = document.getElementById('countdown');
+        setInterval(function() {
+            seconds--;
+            if (seconds > 0) {
+                countdownElement.textContent = seconds;
+            } else {
+                 countdownElement.textContent = 0;
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
